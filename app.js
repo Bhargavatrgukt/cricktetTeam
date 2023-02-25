@@ -88,7 +88,7 @@ app.delete("/movies/:movieId/", async (request, response) => {
 
 //API 6
 
-app.get(/directors/, async (request, response) => {
+app.get("/directors/", async (request, response) => {
   const getALlMoviesDirectorQuiries = `
      select 
      *
@@ -123,7 +123,7 @@ app.get("/directors/:directorId/movies/", async (request, response) => {
 
   response.send(
     directorMovieQueryResponse.map((eachObject) =>
-      convertServerObject(eachObject)
+      convertServerObjectOfMovie(eachObject)
     )
   );
 });
